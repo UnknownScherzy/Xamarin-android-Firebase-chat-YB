@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500">
+    android:background="@color/light_purple">
 
     <View
         android:id="@+id/chatViewBG"
@@ -20,7 +20,7 @@
         android:id="@+id/chatHeader"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/purple_700"
+        android:background="@color/light_purple"
         app:layout_constraintBottom_toTopOf="@id/viewSupporter"
         app:layout_constraintTop_toTopOf="parent"/>
 
