@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "989687319331",
+    "project_id": "workingchat-dc0bf",
+    "storage_bucket": "workingchat-dc0bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989687319331:android:40e2b05a08ba1c93ee5a96",
+        "android_client_info": {
+          "package_name": "com.vdubecky.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABb82JZvBWcxxuJ9jYYhIqOCEskK2ETS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

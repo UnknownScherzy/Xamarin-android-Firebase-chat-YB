@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:padding="5dp"
+    android:background="@drawable/chat_item_background">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/userProfilePhoto"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/empty_profile_photo_bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <View
+        android:id="@+id/viewHelper"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/userProfilePhoto"
+        app:layout_constraintStart_toEndOf="@id/userProfilePhoto"
+        app:layout_constraintTop_toTopOf="@id/userProfilePhoto"/>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="User name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/messagePreview"
+        app:layout_constraintStart_toEndOf="@+id/userProfilePhoto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/messagePreview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Preview"
+        android:textColor="@color/dark_grey"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/previewCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/userProfilePhoto"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <CheckBox
+        android:id="@+id/previewCheckBox"
+        android:layout_width="47dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:buttonTint="@color/dark_grey"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

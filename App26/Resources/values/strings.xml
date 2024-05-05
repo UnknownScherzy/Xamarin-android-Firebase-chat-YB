@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OnlyChats</string>
+    <string name="action_settings">Settings</string>
+	<string name="log_in_button_text">Log In</string>
+	<string name="create_account_button_text">CREATE NEW ACCOUNT</string>
+	<string name="name_input_hint">Name</string>
+	<string name="email_input_hint">Email</string>
+	<string name="password_input_hint">Password</string>
+	<string name="log_in_welcome_text">Welcome</string>
+	<string name="log_in_paragraph">Please login or create a new account</string>
+	<string name="type_a_message">Type a message</string>
+	<string name="name">Name</string>
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/input_grey"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dashboardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/fragmentTitle"/>
+
+    <TextView
+        android:id="@+id/fragmentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:text="@string/name"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/createGroupButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_group_add_24"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/fragmentTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fragmentTitle"/>
+
+    <FrameLayout
+        android:id="@+id/flFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashboardHeader">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/chatsBottomMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="ChangeFragment"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/ic_baseline_chat_24" />
+
+            <TextView
+                android:id="@+id/chatListTitleMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Chats"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/userBottomMenu"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:onClick="ChangeFragment"
+            android:background="@drawable/empty_profile_photo_bg"
+            android:scaleType="centerCrop"
+            app:riv_oval="true" />
+
+        <LinearLayout
+            android:id="@+id/usersBottomMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="ChangeFragment"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/ic_baseline_people_24" />
+
+            <TextView
+                android:id="@+id/usersListTitleMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Users"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

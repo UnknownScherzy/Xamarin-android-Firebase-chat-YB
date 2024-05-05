@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500">
+
+    <View
+        android:id="@+id/chatViewBG"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/chatInputMessage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/chatHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/chatSettingsButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_settings_24"
+        android:visibility="gone"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageBack"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:padding="5dp"
+        android:tint="@color/white"
+        android:src="@drawable/ic_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/imageBack"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/charRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:padding="10dp"
+        app:stackFromEnd="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/chatViewBG"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"/>
+
+    <TextView
+        android:id="@+id/chatName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:text="@string/name"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageBack"/>
+
+    <FrameLayout
+        android:id="@+id/sendLayout"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/chat_input"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:tint="@color/white"
+            android:src="@drawable/ic_baseline_send_24"/>
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/chatInputMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:padding="8dp"
+        android:background="@drawable/chat_input"
+        android:hint="@string/type_a_message"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine|textCapSentences"
+        android:maxLines="5"
+        android:paddingStart="20dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sendLayout"
+        tools:ignore="TouchTargetSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
