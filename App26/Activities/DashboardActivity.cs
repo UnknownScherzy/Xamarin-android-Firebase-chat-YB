@@ -12,6 +12,7 @@ namespace App26
         private UsersFragment _usersFragment;
         private ChatsFragment _chatsFragment;
         private SettingsFragment _settingsFragment;
+        private MapFragment _mapFragment;
         private TextView _dashboardTitle;
 
         private ImageView _createGroupButton;
@@ -28,6 +29,7 @@ namespace App26
             _usersFragment = new UsersFragment(_createGroupButton);
             _chatsFragment = new ChatsFragment();
             _settingsFragment = new SettingsFragment();
+            _mapFragment = new MapFragment();
 
             ChangeFragment("Chat list", _chatsFragment);
         }
@@ -43,7 +45,7 @@ namespace App26
                 ChangeFragment("Users", _usersFragment);
             };
 
-            FindViewById<View>(Resource.Id.userBottomMenu).Click += delegate
+            FindViewById<View>(Resource.Id.userBottomMenu).LongClick += delegate
             {
                 ChangeFragment(LocalDatabase.GetString(Constants.USER_NAME), _settingsFragment);
             };
@@ -51,6 +53,10 @@ namespace App26
             FindViewById<View>(Resource.Id.chatsBottomMenu).Click += delegate
             {
                 ChangeFragment("Chat list", _chatsFragment);
+            };
+            FindViewById<View>(Resource.Id.userBottomMenu).Click += delegate
+            {
+                ChangeFragment("Map", _mapFragment);
             };
         }
 

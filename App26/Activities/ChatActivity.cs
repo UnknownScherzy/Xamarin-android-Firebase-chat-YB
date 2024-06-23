@@ -110,14 +110,14 @@ namespace App26
 
             if (_conversation == null || !_conversation.Exists())
             {
-                await ChceckConversation(inputMessage);
+                await CheckConversation(inputMessage);
             }
 
             _input.Text = string.Empty;
             await SendMessageRoutine(inputMessage);
         }
 
-        private async Task ChceckConversation(string message)
+        private async Task CheckConversation(string message)
         {
             _conversation = await FirebaseDataHelper.Database
                 .Collection(Constants.CONVERSATION_TABLE_ID)
