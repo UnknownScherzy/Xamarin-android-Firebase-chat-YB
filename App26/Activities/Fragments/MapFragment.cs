@@ -3,6 +3,7 @@ using Android.Views;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using AndroidX.Fragment.App;
+using Android.Gms.Common.Apis;
 
 namespace App26
 {
@@ -33,7 +34,8 @@ namespace App26
             LatLng myPos = new LatLng(32.164816, 34.826822);
 
             markerOptions.SetPosition(myPos);
-            markerOptions.SetTitle("You are here!");
+            markerOptions.SetTitle("Handesaaim High School");
+            markerOptions.SetSnippet("The main marker set when the map is created!");
             googleMap.AddMarker(markerOptions);
 
             // Optional
@@ -43,6 +45,21 @@ namespace App26
             // Update Camera    
             googleMap.MoveCamera(CameraUpdateFactory.NewLatLng(myPos));
             googleMap.AnimateCamera(CameraUpdateFactory.ZoomTo(17));
+
+            googleMap.MapClick += HandleMapClick;
+            void HandleMapClick(object sender, GoogleMap.MapClickEventArgs e)
+            {
+                using (var markerOption = new MarkerOptions())
+                {
+                    markerOption.SetPosition(e.Point);
+                    markerOption.SetTitle("clickedLocation");
+                    markerOption.SetSnippet("This is a marker set by clicking! ⭐⭐⭐⭐⭐ 5.0 rating!");
+                    // save the "marker" variable returned if you need move, delete, update it, etc...
+                    var marker = googleMap.AddMarker(markerOption);
+                }
+            }
         }
+
+        
     }
 }
